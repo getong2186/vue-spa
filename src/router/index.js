@@ -43,14 +43,14 @@ export default new Router({
           component: (resolve) => require(['@/pages/index/home'], resolve)
         },
         {
-          path: '/story',
-          name: 'story',
-          component: (resolve) => require(['@/pages/index/story'], resolve)
+          path: '/swa',
+          name: 'swa',
+          component: (resolve) => require(['@/pages/index/swa'], resolve)
         },
         {
-          path: '/footprints',
-          name: 'footprints',
-          component: (resolve) => require(['@/pages/index/footprints'], resolve)
+          path: '/mine',
+          name: 'mine',
+          component: (resolve) => require(['@/pages/index/mine'], resolve)
         },
         {
           path: '/day',
@@ -60,9 +60,14 @@ export default new Router({
       ]
     },
     {
-      path: '/Home/Detail',
-      name: 'Detail',
-      component: (resolve) => require(['@/pages/detail'], resolve)
+      path: '/home/search',
+      name: 'search',
+      component: (resolve) => require(['@/pages/detail/home_search'], resolve)
+    },
+    {
+      path: '/swa/detail',
+      name: 'detail',
+      component: (resolve) => require(['@/pages/detail/swa_detail'], resolve)
     }
   ]
 })
