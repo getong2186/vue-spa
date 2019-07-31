@@ -3,14 +3,18 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <div class="nav-footer">
-      <footer>
-        <router-link v-for='(item, index) in navList' :to='item.path' :key='index'
-                     v-bind:class="{'active':activeRoute == item.path}">
-          <div :class="'tab-'+index"></div>
-          <p v-text="item.name"></p>
-        </router-link>
-      </footer>
+    <div>
+      <!--充当占位符的div块，无实质内容 -->
+      <div style="height:54px;"></div>
+      <div class="nav-footer">
+        <footer>
+          <router-link v-for='(item, index) in navList' :to='item.path' :key='index'
+                      v-bind:class="{'active':activeRoute == item.path}">
+            <div :class="'tab-'+index"></div>
+            <p v-text="item.name"></p>
+          </router-link>
+        </footer>
+      </div>
     </div>
   </div>
 </template>
@@ -22,16 +26,16 @@ export default {
       navList: [
         {
           'path': '/home',
-          'name': '红芯'
+          'name': 'GT'
         },
         {
-          'path': '/story',
+          'path': '/swa',
           'name': '密码管家'
         },
         {
-          'path': '/footprints',
+          'path': '/mine',
           'name': '我的'
-        },
+        }
         // {
         //   'path': '/day',
         //   'name': '纪念日'
@@ -45,7 +49,6 @@ export default {
     }
   },
   methods: {
-
   }
 }
 </script>
@@ -59,6 +62,7 @@ export default {
     left: 0px;
     bottom: 0px;
     width: 100%;
+    opacity: 1;
     .h(98);
     background: @tab-general-bg-color;
     display: block;
@@ -98,9 +102,6 @@ export default {
         .tab-2 {
           background-image: url("../assets/imgs/footer/mine-noselect.png");
         }
-        // .tab-3 {
-        //   background-image: url("../assets/imgs/dy-noselect.svg");
-        // }
         &:hover {
           text-decoration: none;
         }
@@ -117,9 +118,6 @@ export default {
           p {
             color:#007aff;
           }
-          // .tab-3 {
-          //   background-image: url("../assets/imgs/dy-select.svg");
-          // }
         }
       }
       p {
